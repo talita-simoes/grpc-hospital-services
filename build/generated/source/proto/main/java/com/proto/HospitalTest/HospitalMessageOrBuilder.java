@@ -3,7 +3,7 @@
 
 package com.proto.HospitalTest;
 
-public interface HospitalTestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:HospitalTest.HospitalTest)
+public interface HospitalMessageOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:HospitalTest.HospitalMessage)
     com.google.protobuf.MessageOrBuilder {
 }

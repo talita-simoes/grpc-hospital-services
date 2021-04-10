@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package patient;
+
+option java_package = "com.proto.patient";
+option java_multiple_files = true;
+
+message PatientId {
+  string pps_no = 1;
+  string first_name = 2;
+  string last_name = 3;
+}
+
+message PatientRequest {
+  PatientId patientId = 1;
+}
+
+message PatientResponse {
+  string result = 1;
+}
+
+service PatientService {
+  // Unary API
+  rpc Patient(PatientRequest) returns (PatientResponse) {};//function
+}

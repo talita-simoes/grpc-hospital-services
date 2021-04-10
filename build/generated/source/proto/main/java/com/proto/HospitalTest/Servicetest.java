@@ -15,15 +15,10 @@ public final class Servicetest {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HospitalTest_HospitalTest_descriptor;
+    internal_static_HospitalTest_HospitalMessage_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HospitalTest_HospitalTest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HospitalTest_HospitalService_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HospitalTest_HospitalService_fieldAccessorTable;
+      internal_static_HospitalTest_HospitalMessage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -34,24 +29,18 @@ public final class Servicetest {
   static {
     java.lang.String[] descriptorData = {
       "\n\036HospitalTest/servicetest.proto\022\014Hospit" +
-      "alTest\"\016\n\014HospitalTest\"\021\n\017HospitalServic" +
-      "eB\032\n\026com.proto.HospitalTestP\001b\006proto3"
+      "alTest\"\021\n\017HospitalMessage2\021\n\017HospitalSer" +
+      "viceB\032\n\026com.proto.HospitalTestP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_HospitalTest_HospitalTest_descriptor =
+    internal_static_HospitalTest_HospitalMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_HospitalTest_HospitalTest_fieldAccessorTable = new
+    internal_static_HospitalTest_HospitalMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HospitalTest_HospitalTest_descriptor,
-        new java.lang.String[] { });
-    internal_static_HospitalTest_HospitalService_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_HospitalTest_HospitalService_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HospitalTest_HospitalService_descriptor,
+        internal_static_HospitalTest_HospitalMessage_descriptor,
         new java.lang.String[] { });
   }
 

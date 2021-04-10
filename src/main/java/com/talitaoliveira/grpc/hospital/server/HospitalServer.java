@@ -4,11 +4,12 @@ import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import java.io.IOException;
 
-public class hospitalServer {
+public class HospitalServer {
     public static void main(String[] args) throws IOException, InterruptedException {
-        System.out.println("Hello gRPC");
+        System.out.println("Server started");
 
         Server server = ServerBuilder.forPort(50051)
+                .addService(new PatientServiceImpl())//Taking the Service from
         .build();
 
         server.start();

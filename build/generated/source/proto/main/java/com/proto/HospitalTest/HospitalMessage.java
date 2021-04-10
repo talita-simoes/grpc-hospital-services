@@ -4,25 +4,25 @@
 package com.proto.HospitalTest;
 
 /**
- * Protobuf type {@code HospitalTest.HospitalTest}
+ * Protobuf type {@code HospitalTest.HospitalMessage}
  */
-public final class HospitalTest extends
+public final class HospitalMessage extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:HospitalTest.HospitalTest)
-    HospitalTestOrBuilder {
+    // @@protoc_insertion_point(message_implements:HospitalTest.HospitalMessage)
+    HospitalMessageOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use HospitalTest.newBuilder() to construct.
-  private HospitalTest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use HospitalMessage.newBuilder() to construct.
+  private HospitalMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private HospitalTest() {
+  private HospitalMessage() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new HospitalTest();
+    return new HospitalMessage();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private HospitalTest(
+  private HospitalMessage(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -69,15 +69,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.proto.HospitalTest.Servicetest.internal_static_HospitalTest_HospitalTest_descriptor;
+    return com.proto.HospitalTest.Servicetest.internal_static_HospitalTest_HospitalMessage_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.proto.HospitalTest.Servicetest.internal_static_HospitalTest_HospitalTest_fieldAccessorTable
+    return com.proto.HospitalTest.Servicetest.internal_static_HospitalTest_HospitalMessage_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.proto.HospitalTest.HospitalTest.class, com.proto.HospitalTest.HospitalTest.Builder.class);
+            com.proto.HospitalTest.HospitalMessage.class, com.proto.HospitalTest.HospitalMessage.Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -113,10 +113,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.proto.HospitalTest.HospitalTest)) {
+    if (!(obj instanceof com.proto.HospitalTest.HospitalMessage)) {
       return super.equals(obj);
     }
-    com.proto.HospitalTest.HospitalTest other = (com.proto.HospitalTest.HospitalTest) obj;
+    com.proto.HospitalTest.HospitalMessage other = (com.proto.HospitalTest.HospitalMessage) obj;
 
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -134,69 +134,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.proto.HospitalTest.HospitalTest parseFrom(
+  public static com.proto.HospitalTest.HospitalMessage parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.HospitalTest.HospitalTest parseFrom(
+  public static com.proto.HospitalTest.HospitalMessage parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.HospitalTest.HospitalTest parseFrom(
+  public static com.proto.HospitalTest.HospitalMessage parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.HospitalTest.HospitalTest parseFrom(
+  public static com.proto.HospitalTest.HospitalMessage parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.HospitalTest.HospitalTest parseFrom(byte[] data)
+  public static com.proto.HospitalTest.HospitalMessage parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.HospitalTest.HospitalTest parseFrom(
+  public static com.proto.HospitalTest.HospitalMessage parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.HospitalTest.HospitalTest parseFrom(java.io.InputStream input)
+  public static com.proto.HospitalTest.HospitalMessage parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.proto.HospitalTest.HospitalTest parseFrom(
+  public static com.proto.HospitalTest.HospitalMessage parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.proto.HospitalTest.HospitalTest parseDelimitedFrom(java.io.InputStream input)
+  public static com.proto.HospitalTest.HospitalMessage parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.proto.HospitalTest.HospitalTest parseDelimitedFrom(
+  public static com.proto.HospitalTest.HospitalMessage parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.proto.HospitalTest.HospitalTest parseFrom(
+  public static com.proto.HospitalTest.HospitalMessage parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.proto.HospitalTest.HospitalTest parseFrom(
+  public static com.proto.HospitalTest.HospitalMessage parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -209,7 +209,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.proto.HospitalTest.HospitalTest prototype) {
+  public static Builder newBuilder(com.proto.HospitalTest.HospitalMessage prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -225,26 +225,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code HospitalTest.HospitalTest}
+   * Protobuf type {@code HospitalTest.HospitalMessage}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:HospitalTest.HospitalTest)
-      com.proto.HospitalTest.HospitalTestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:HospitalTest.HospitalMessage)
+      com.proto.HospitalTest.HospitalMessageOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.proto.HospitalTest.Servicetest.internal_static_HospitalTest_HospitalTest_descriptor;
+      return com.proto.HospitalTest.Servicetest.internal_static_HospitalTest_HospitalMessage_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.proto.HospitalTest.Servicetest.internal_static_HospitalTest_HospitalTest_fieldAccessorTable
+      return com.proto.HospitalTest.Servicetest.internal_static_HospitalTest_HospitalMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.proto.HospitalTest.HospitalTest.class, com.proto.HospitalTest.HospitalTest.Builder.class);
+              com.proto.HospitalTest.HospitalMessage.class, com.proto.HospitalTest.HospitalMessage.Builder.class);
     }
 
-    // Construct using com.proto.HospitalTest.HospitalTest.newBuilder()
+    // Construct using com.proto.HospitalTest.HospitalMessage.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -268,17 +268,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.proto.HospitalTest.Servicetest.internal_static_HospitalTest_HospitalTest_descriptor;
+      return com.proto.HospitalTest.Servicetest.internal_static_HospitalTest_HospitalMessage_descriptor;
     }
 
     @java.lang.Override
-    public com.proto.HospitalTest.HospitalTest getDefaultInstanceForType() {
-      return com.proto.HospitalTest.HospitalTest.getDefaultInstance();
+    public com.proto.HospitalTest.HospitalMessage getDefaultInstanceForType() {
+      return com.proto.HospitalTest.HospitalMessage.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.proto.HospitalTest.HospitalTest build() {
-      com.proto.HospitalTest.HospitalTest result = buildPartial();
+    public com.proto.HospitalTest.HospitalMessage build() {
+      com.proto.HospitalTest.HospitalMessage result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -286,8 +286,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.proto.HospitalTest.HospitalTest buildPartial() {
-      com.proto.HospitalTest.HospitalTest result = new com.proto.HospitalTest.HospitalTest(this);
+    public com.proto.HospitalTest.HospitalMessage buildPartial() {
+      com.proto.HospitalTest.HospitalMessage result = new com.proto.HospitalTest.HospitalMessage(this);
       onBuilt();
       return result;
     }
@@ -326,16 +326,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.proto.HospitalTest.HospitalTest) {
-        return mergeFrom((com.proto.HospitalTest.HospitalTest)other);
+      if (other instanceof com.proto.HospitalTest.HospitalMessage) {
+        return mergeFrom((com.proto.HospitalTest.HospitalMessage)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.proto.HospitalTest.HospitalTest other) {
-      if (other == com.proto.HospitalTest.HospitalTest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.proto.HospitalTest.HospitalMessage other) {
+      if (other == com.proto.HospitalTest.HospitalMessage.getDefaultInstance()) return this;
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -351,11 +351,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.proto.HospitalTest.HospitalTest parsedMessage = null;
+      com.proto.HospitalTest.HospitalMessage parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.proto.HospitalTest.HospitalTest) e.getUnfinishedMessage();
+        parsedMessage = (com.proto.HospitalTest.HospitalMessage) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -377,41 +377,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:HospitalTest.HospitalTest)
+    // @@protoc_insertion_point(builder_scope:HospitalTest.HospitalMessage)
   }
 
-  // @@protoc_insertion_point(class_scope:HospitalTest.HospitalTest)
-  private static final com.proto.HospitalTest.HospitalTest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:HospitalTest.HospitalMessage)
+  private static final com.proto.HospitalTest.HospitalMessage DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.proto.HospitalTest.HospitalTest();
+    DEFAULT_INSTANCE = new com.proto.HospitalTest.HospitalMessage();
   }
 
-  public static com.proto.HospitalTest.HospitalTest getDefaultInstance() {
+  public static com.proto.HospitalTest.HospitalMessage getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<HospitalTest>
-      PARSER = new com.google.protobuf.AbstractParser<HospitalTest>() {
+  private static final com.google.protobuf.Parser<HospitalMessage>
+      PARSER = new com.google.protobuf.AbstractParser<HospitalMessage>() {
     @java.lang.Override
-    public HospitalTest parsePartialFrom(
+    public HospitalMessage parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new HospitalTest(input, extensionRegistry);
+      return new HospitalMessage(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<HospitalTest> parser() {
+  public static com.google.protobuf.Parser<HospitalMessage> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<HospitalTest> getParserForType() {
+  public com.google.protobuf.Parser<HospitalMessage> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.proto.HospitalTest.HospitalTest getDefaultInstanceForType() {
+  public com.proto.HospitalTest.HospitalMessage getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

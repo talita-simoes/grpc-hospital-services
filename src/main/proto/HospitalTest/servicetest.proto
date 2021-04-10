@@ -5,5 +5,5 @@ package HospitalTest;
 option java_package = "com.proto.HospitalTest";
 option java_multiple_files = true;
 
-message HospitalTest {}
-message HospitalService {}
+message HospitalMessage {}
+service HospitalService {}
