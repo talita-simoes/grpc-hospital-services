@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package doctor;
+
+option java_package = "com.proto.doctor";
+option java_multiple_files = true;
+
+message DoctorId {
+  bool is_available = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string specialty = 4;
+}
+
+message DoctorRequest {
+  DoctorId doctorId = 1;
+}
+
+message DoctorResponse {
+  string result = 1;
+}
+
+// Server Streaming API
+service DoctorService {
+  rpc Doctor(DoctorRequest) returns (stream DoctorResponse) {};//function
+}

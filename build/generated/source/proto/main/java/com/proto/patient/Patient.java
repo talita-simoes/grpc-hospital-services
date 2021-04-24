@@ -29,6 +29,16 @@ public final class Patient {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_patient_PatientResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_patient_PatientAverageRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_patient_PatientAverageRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_patient_PatientAverageResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_patient_PatientAverageResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -42,10 +52,15 @@ public final class Patient {
       "entId\022\016\n\006pps_no\030\001 \001(\t\022\022\n\nfirst_name\030\002 \001(" +
       "\t\022\021\n\tlast_name\030\003 \001(\t\"7\n\016PatientRequest\022%" +
       "\n\tpatientId\030\001 \001(\0132\022.patient.PatientId\"!\n" +
-      "\017PatientResponse\022\016\n\006result\030\001 \001(\t2P\n\016Pati" +
-      "entService\022>\n\007Patient\022\027.patient.PatientR" +
-      "equest\032\030.patient.PatientResponse\"\000B\025\n\021co" +
-      "m.proto.patientP\001b\006proto3"
+      "\017PatientResponse\022\016\n\006result\030\001 \001(\t\"0\n\025Pati" +
+      "entAverageRequest\022\027\n\017number_patients\030\001 \001" +
+      "(\005\"1\n\026PatientAverageResponse\022\027\n\017patient_" +
+      "average\030\001 \001(\0012\247\001\n\016PatientService\022>\n\007Pati" +
+      "ent\022\027.patient.PatientRequest\032\030.patient.P" +
+      "atientResponse\"\000\022U\n\016PatientAverage\022\036.pat" +
+      "ient.PatientAverageRequest\032\037.patient.Pat" +
+      "ientAverageResponse\"\000(\001B\025\n\021com.proto.pat" +
+      "ientP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -69,6 +84,18 @@ public final class Patient {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_patient_PatientResponse_descriptor,
         new java.lang.String[] { "Result", });
+    internal_static_patient_PatientAverageRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_patient_PatientAverageRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_patient_PatientAverageRequest_descriptor,
+        new java.lang.String[] { "NumberPatients", });
+    internal_static_patient_PatientAverageResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_patient_PatientAverageResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_patient_PatientAverageResponse_descriptor,
+        new java.lang.String[] { "PatientAverage", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

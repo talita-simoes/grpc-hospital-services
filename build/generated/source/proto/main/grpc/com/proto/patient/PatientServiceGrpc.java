@@ -45,6 +45,37 @@ public final class PatientServiceGrpc {
     return getPatientMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.proto.patient.PatientAverageRequest,
+      com.proto.patient.PatientAverageResponse> getPatientAverageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatientAverage",
+      requestType = com.proto.patient.PatientAverageRequest.class,
+      responseType = com.proto.patient.PatientAverageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<com.proto.patient.PatientAverageRequest,
+      com.proto.patient.PatientAverageResponse> getPatientAverageMethod() {
+    io.grpc.MethodDescriptor<com.proto.patient.PatientAverageRequest, com.proto.patient.PatientAverageResponse> getPatientAverageMethod;
+    if ((getPatientAverageMethod = PatientServiceGrpc.getPatientAverageMethod) == null) {
+      synchronized (PatientServiceGrpc.class) {
+        if ((getPatientAverageMethod = PatientServiceGrpc.getPatientAverageMethod) == null) {
+          PatientServiceGrpc.getPatientAverageMethod = getPatientAverageMethod =
+              io.grpc.MethodDescriptor.<com.proto.patient.PatientAverageRequest, com.proto.patient.PatientAverageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatientAverage"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.patient.PatientAverageRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.patient.PatientAverageResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new PatientServiceMethodDescriptorSupplier("PatientAverage"))
+              .build();
+        }
+      }
+    }
+    return getPatientAverageMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -103,6 +134,16 @@ public final class PatientServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatientMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Client Streaming API
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.proto.patient.PatientAverageRequest> patientAverage(
+        io.grpc.stub.StreamObserver<com.proto.patient.PatientAverageResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getPatientAverageMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -112,6 +153,13 @@ public final class PatientServiceGrpc {
                 com.proto.patient.PatientRequest,
                 com.proto.patient.PatientResponse>(
                   this, METHODID_PATIENT)))
+          .addMethod(
+            getPatientAverageMethod(),
+            io.grpc.stub.ServerCalls.asyncClientStreamingCall(
+              new MethodHandlers<
+                com.proto.patient.PatientAverageRequest,
+                com.proto.patient.PatientAverageResponse>(
+                  this, METHODID_PATIENT_AVERAGE)))
           .build();
     }
   }
@@ -139,6 +187,17 @@ public final class PatientServiceGrpc {
         io.grpc.stub.StreamObserver<com.proto.patient.PatientResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPatientMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Client Streaming API
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.proto.patient.PatientAverageRequest> patientAverage(
+        io.grpc.stub.StreamObserver<com.proto.patient.PatientAverageResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
+          getChannel().newCall(getPatientAverageMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -194,6 +253,7 @@ public final class PatientServiceGrpc {
   }
 
   private static final int METHODID_PATIENT = 0;
+  private static final int METHODID_PATIENT_AVERAGE = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -226,6 +286,9 @@ public final class PatientServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_PATIENT_AVERAGE:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.patientAverage(
+              (io.grpc.stub.StreamObserver<com.proto.patient.PatientAverageResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -278,6 +341,7 @@ public final class PatientServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new PatientServiceFileDescriptorSupplier())
               .addMethod(getPatientMethod())
+              .addMethod(getPatientAverageMethod())
               .build();
         }
       }

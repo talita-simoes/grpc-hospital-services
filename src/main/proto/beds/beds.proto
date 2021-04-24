@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package beds;
+
+option java_package = "com.proto.beds";
+option java_multiple_files = true;
+
+
+message BedsAvailableRequest {
+  int32 numberGo = 1;
+  int32 numberBase =2;
+}
+
+message BedsAvailableResponse {
+  int32  numberBack = 1;
+}
+
+message BedsMessage {
+  string message1 = 1;
+  string message2 = 2;
+  string message3 = 3;
+}
+
+message BedsMessageRequest {
+  BedsMessage bedsMessage = 1;
+}
+
+message BedsMessageResponse {
+  string messageToReturn = 1;
+}
+
+// Bidirectional Streaming API
+service BedsService {
+
+  rpc BedsAvailable(stream BedsAvailableRequest) returns (stream BedsAvailableResponse) {};//function
+  // Bidirectional Streaming API
+  rpc BedsMessage(stream BedsMessageRequest) returns (stream BedsMessageResponse) {};
+}

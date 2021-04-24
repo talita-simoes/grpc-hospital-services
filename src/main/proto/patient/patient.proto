@@ -19,7 +19,20 @@ message PatientResponse {
   string result = 1;
 }
 
+message PatientAverageRequest {
+  int32 number_patients = 1;
+}
+
+message PatientAverageResponse {
+  double patient_average = 1;
+}
+
 service PatientService {
+
   // Unary API
   rpc Patient(PatientRequest) returns (PatientResponse) {};//function
+
+  // Client Streaming API
+  rpc PatientAverage(stream PatientAverageRequest) returns (PatientAverageResponse){};
 }
+
