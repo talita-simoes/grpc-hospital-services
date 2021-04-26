@@ -3,10 +3,12 @@ package com.talitaoliveira.grpc.hospital.client;
 import com.proto.beds.*;
 import com.proto.doctor.*;
 import com.proto.patient.*;
+import com.talitaoliveira.grpc.hospital.jmDNS.HospitalServiceDiscovery;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 
+import javax.jmdns.ServiceInfo;
 import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -20,24 +22,46 @@ public class HospitalClient {
         HospitalClient main = new HospitalClient();
         main.run();
 
-        //synchronous client
-        //HospitalServiceGrpc.HospitalServiceBlockingStub syncClient = HospitalServiceGrpc.newBlockingStub(channel);
-
-        // to create an asynchronous client
-        //HospitalServiceGrpc.HospitalServiceFutureStub asyncClient = HospitalServiceGrpc.newFutureStub(channel);
-
     }
 
     public void run(){
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost",50051)
+
+        //Discovery all the information from the service and pass the parameters to the channel
+        //CHANNEL
+        ServiceInfo serviceInfo;
+        String service_type = "_patient._tcp.local.";
+        //Now retrieve the service info - all we are supplying is the service type
+        serviceInfo = HospitalServiceDiscovery.run(service_type);
+        //Use the serviceInfo to retrieve the port
+        int port = serviceInfo.getPort();
+        String host = "localhost";
+        //int port = 50051;
+
+        ManagedChannel channel = ManagedChannelBuilder.forAddress(host, port)
                 .usePlaintext()
                 .build();
+    //------------------------------------------------------------------------------------------
+        //CHANNEL2
+        //Discovery for channel2
+        ServiceInfo serviceInfo2;
+        String service_type2 = "_doctor._tcp.local.";
+        serviceInfo2 = HospitalServiceDiscovery.run(service_type2);
+        int port2 = serviceInfo2.getPort();
+        String host2 = "localhost";
 
-        ManagedChannel channel2 = ManagedChannelBuilder.forAddress("localhost",50052)
+        ManagedChannel channel2 = ManagedChannelBuilder.forAddress(host2,port2)
                     .usePlaintext()
                     .build();
+    //------------------------------------------------------------------------------------------
+        //CHANNEL3
+        //Discovery for channel3
+        ServiceInfo serviceInfo3;
+        String service_type3 = "_beds._tcp.local.";
+        serviceInfo3 = HospitalServiceDiscovery.run(service_type3);
+        int port3 = serviceInfo3.getPort();
+        String host3 = "localhost";
 
-        ManagedChannel channel3 = ManagedChannelBuilder.forAddress("localhost",50053)
+        ManagedChannel channel3 = ManagedChannelBuilder.forAddress(host3, port3)
                 .usePlaintext()
                 .build();
 
