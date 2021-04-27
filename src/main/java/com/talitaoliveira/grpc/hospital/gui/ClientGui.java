@@ -63,14 +63,14 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
         panel.add(entry1b);
         entry1c = new JTextField("last name", 10);
         panel.add(entry1c);
-        panel.add(Box.createRigidArea(new Dimension(5, 2)));
+        panel.add(Box.createRigidArea(new Dimension(8, 4)));
 
-        JButton button = new JButton("Invoke Service 1");
+        JButton button = new JButton("Register Patient");
         button.addActionListener(this);
         panel.add(button);
         panel.add(Box.createRigidArea(new Dimension(10, 0)));
 
-        reply1 = new JTextField("", 10);
+        reply1 = new JTextField("", 40);
         reply1.setEditable(false);
         panel.add(reply1);
 
@@ -93,7 +93,7 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
         panel.add(entry2);
         panel.add(Box.createRigidArea(new Dimension(10, 10)));
 
-        JButton button = new JButton("Invoke Service 2");
+        JButton button = new JButton("Find Doctors");
         button.addActionListener(this);
         panel.add(button);
         panel.add(Box.createRigidArea(new Dimension(10, 0)));
@@ -228,8 +228,9 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
         JButton button = (JButton) e.getSource();
         String label = button.getActionCommand();
 
-        if (label.equals("Invoke Service 1")) {
-            System.out.println("service 1 to be invoked ...");
+        // THIS ACTIVATES THE METHOD  - Invoke service 1
+        if (label.equals("Register Patient")) {
+            System.out.println("Register patient to be invoked ...");
 
 
             /*
@@ -260,7 +261,7 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
 
             reply1.setText(String.valueOf(patientResponse.getResult()));
 
-        } else if (label.equals("Invoke Service 2")) {
+        } else if (label.equals("Find Doctors")) {
             System.out.println("service 2 to be invoked ...");
             ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50052)
                     .usePlaintext()

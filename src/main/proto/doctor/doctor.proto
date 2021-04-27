@@ -24,3 +24,4 @@ message DoctorResponse {
 service DoctorService {
   rpc Doctor(DoctorRequest) returns (stream DoctorResponse) {};//function
 }
+

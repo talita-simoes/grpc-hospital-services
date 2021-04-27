@@ -40,7 +40,7 @@ public class HospitalServiceRegistration {
             System.out.printf("registering service with type: %s and name: %s on port %d ", service_type, service_name, service_port);
 
             //sleep for 10 seconds
-            Thread.sleep(10000);
+            Thread.sleep(1000);
             System.out.println("\nService Registered");
             //unregister the services
             //jmdns.unregisterAllServices();   //you could also unregister a single service
