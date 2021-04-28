@@ -26,7 +26,6 @@ public class PatientServiceImpl extends PatientServiceGrpc.PatientServiceImplBas
         // Complete the RPC call
         responseObserver.onCompleted();
 
-        //super.patient(request, responseObserver);
     }
 
     @Override

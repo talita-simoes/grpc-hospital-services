@@ -1,7 +1,6 @@
 package com.talitaoliveira.grpc.hospital.gui;
 
-import java.awt.Dimension;
-import java.awt.Insets;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
@@ -64,6 +63,11 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
         entry1c = new JTextField("last name", 10);
         panel.add(entry1c);
         panel.add(Box.createRigidArea(new Dimension(8, 4)));
+
+        panel.add(new JPanel());
+        panel.add(new JSeparator(JSeparator.VERTICAL),
+                BorderLayout.LINE_START);
+
 
         JButton button = new JButton("Register Patient");
         button.addActionListener(this);
@@ -138,12 +142,12 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
         entry3e.setColumns(2);
         panel.add(entry3e);
 
-        panel.add(Box.createRigidArea(new Dimension(10, 0)));
+        panel.add(Box.createRigidArea(new Dimension(10, 10)));
 
-        JButton button = new JButton("Invoke Service 3");
+        JButton button = new JButton("Calculate Average");
         button.addActionListener(this);
         panel.add(button);
-        panel.add(Box.createRigidArea(new Dimension(10, 0)));
+        panel.add(Box.createRigidArea(new Dimension(10, 10)));
 
         reply3 = new JFormattedTextField();
         entry3e.setColumns(4);
@@ -300,7 +304,7 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
                 }
             }).start();
 
-        } else if (label.equals("Invoke Service 3")) {
+        } else if (label.equals("Calculate Average")) {
             System.out.println("service 3 to be invoked ...");
 
             ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051)
