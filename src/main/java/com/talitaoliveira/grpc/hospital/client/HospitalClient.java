@@ -67,13 +67,13 @@ public class HospitalClient {
 
 
     // CALLING THE FUNCTIONS (comment out to not call)------------------------------------------
-        doUnaryCall(channel);
+        //doUnaryCallPatient(channel);
 
-        doClientStreamingCall(channel);
+        //doClientStreamingCallPatientAverage(channel);
 
-        doServerStreamingCall(channel2);
+        //doServerStreamingCallDoctor(channel2);
 
-        doBidirectionalCall(channel3);
+        doBidirectionalCallBeds(channel3);
 
         //doBidirectionalCall2(channel);
 
@@ -83,9 +83,10 @@ public class HospitalClient {
     }
 
     //call the patient
-    private void doUnaryCall(ManagedChannel channel){
+    private void doUnaryCallPatient(ManagedChannel channel){
         // A.created a patient service client (blocking synchronous)
-        PatientServiceGrpc.PatientServiceBlockingStub patientClient = PatientServiceGrpc.newBlockingStub(channel);
+        PatientServiceGrpc.PatientServiceBlockingStub patientClient = PatientServiceGrpc.newBlockingStub
+                (channel);
 
         // A.created a protocol buffer patient message
         PatientId patientId = PatientId.newBuilder()
@@ -106,12 +107,13 @@ public class HospitalClient {
     }
 
     //call the patientAverage
-    private void doClientStreamingCall(ManagedChannel channel){
+    private void doClientStreamingCallPatientAverage(ManagedChannel channel){
         PatientServiceGrpc.PatientServiceStub asyncClient = PatientServiceGrpc.newStub(channel);
 
         CountDownLatch latch = new CountDownLatch(1);
 
-        StreamObserver<PatientAverageRequest> requestObserver = asyncClient.patientAverage(new StreamObserver<PatientAverageResponse>() {
+        StreamObserver<PatientAverageRequest> requestObserver = asyncClient.patientAverage
+                (new StreamObserver<PatientAverageResponse>() {
             @Override
             public void onNext(PatientAverageResponse value) {
                 System.out.println("Received response from Server");
@@ -165,14 +167,14 @@ public class HospitalClient {
     }
 
     //call the doctor
-    private void doServerStreamingCall(ManagedChannel channel2){
-        // B.created a doctor service client (streaming)
+    private void doServerStreamingCallDoctor(ManagedChannel channel2){
+        // B.created a doctor service client streaming
         DoctorServiceGrpc.DoctorServiceBlockingStub doctorClient = DoctorServiceGrpc.newBlockingStub(channel2);
 
         // B.created a protocol buffer doctor message | prepare the request
         DoctorRequest doctorRequest =
                 DoctorRequest.newBuilder()
-                        .setDoctorId(DoctorId.newBuilder().setSpecialty("Surgery"))
+                        .setDoctorId(DoctorId.newBuilder().setSpecialty("GP"))
                         .build();
 
         // stream the responses in a block manner
@@ -181,12 +183,13 @@ public class HospitalClient {
     }
 
     //call the bedsAvailable
-    private void doBidirectionalCall(ManagedChannel channel3){
+    private void doBidirectionalCallBeds(ManagedChannel channel3){
         BedsServiceGrpc.BedsServiceStub asyncClient = BedsServiceGrpc.newStub(channel3);
 
         CountDownLatch latch = new CountDownLatch(1);
 
-        StreamObserver<BedsAvailableRequest>  requestObserver  = asyncClient.bedsAvailable(new StreamObserver<BedsAvailableResponse>() {
+        StreamObserver<BedsAvailableRequest>  requestObserver  = asyncClient.bedsAvailable
+                (new StreamObserver<BedsAvailableResponse>() {
 
             @Override
             public void onNext(BedsAvailableResponse value) {

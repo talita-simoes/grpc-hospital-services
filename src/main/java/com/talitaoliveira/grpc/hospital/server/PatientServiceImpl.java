@@ -25,11 +25,11 @@ public class PatientServiceImpl extends PatientServiceGrpc.PatientServiceImplBas
 
         // Complete the RPC call
         responseObserver.onCompleted();
-
     }
 
     @Override
-    public StreamObserver<PatientAverageRequest> patientAverage(StreamObserver<PatientAverageResponse> responseObserver) {
+    public StreamObserver<PatientAverageRequest> patientAverage
+            (StreamObserver<PatientAverageResponse> responseObserver) {
        StreamObserver<PatientAverageRequest> requestObserver = new StreamObserver<PatientAverageRequest>() {
            int sum = 0;
            int count = 0;
