@@ -20,8 +20,21 @@ message DoctorResponse {
   string result = 1;
 }
 
-// Server Streaming API
-service DoctorService {
-  rpc Doctor(DoctorRequest) returns (stream DoctorResponse) {};//function
+message RegisterDoctorRequest {
+  DoctorId doctorId = 1;
 }
+
+message RegisterDoctorResponse {
+  string result = 1;
+}
+
+
+service DoctorService {
+  // Server Streaming
+  rpc Doctor(DoctorRequest) returns (stream DoctorResponse) {};
+
+  // Unary
+  rpc RegisterDoctor(RegisterDoctorRequest) returns (RegisterDoctorResponse) {};
+}
+
 

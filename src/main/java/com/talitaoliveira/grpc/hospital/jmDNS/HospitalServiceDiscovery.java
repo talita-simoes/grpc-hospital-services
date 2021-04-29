@@ -16,29 +16,27 @@ public class HospitalServiceDiscovery {
     private static class MyServiceListener implements ServiceListener{
 
         private int port;
-        private String host;
         private ServiceInfo serviceInfo;
 
         public void serviceAdded(ServiceEvent event) {
-            // TODO Auto-generated method stub
             System.out.println("\nService Added " + event.getInfo());
 
         }
 
         public void serviceRemoved(ServiceEvent event) {
-            // TODO Auto-generated method stub
+
             System.out.println("Service Removed " + event.getInfo());
 
         }
 
         public void serviceResolved(ServiceEvent event) {
-            // TODO Auto-generated method stub
+
             System.out.println("Service Resolved " + event.getInfo());
 
             ServiceInfo serviceInfo = event.getInfo();
             this.setServiceInfo(serviceInfo);
-            System.out.println("host " + serviceInfo.getHostAddress());
-            //this.setHost(serviceInfo.getHostAddress());
+//            System.out.println("host " + serviceInfo.getHostAddress());
+//            this.setHost(serviceInfo.getHostAddress());
             System.out.println("port " + serviceInfo.getPort());
             this.setPort(serviceInfo.getPort());
             System.out.println("type " + serviceInfo.getType());
@@ -56,7 +54,6 @@ public class HospitalServiceDiscovery {
             this.port = port;
         }
 
-
         public ServiceInfo getServiceInfo() {
             return serviceInfo;
         }
@@ -67,7 +64,6 @@ public class HospitalServiceDiscovery {
 
     }
 
-    //public static void main(String[] args) {
     public static ServiceInfo run(String service_type) {
 
         int port = 0;
@@ -99,13 +95,13 @@ public class HospitalServiceDiscovery {
 
 
         } catch (UnknownHostException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
         return serviceInfo;

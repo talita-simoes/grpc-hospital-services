@@ -19,12 +19,8 @@ public class HospitalServiceRegistration {
              * service information
              */
 
-            //the assumption is that we are registering a grpc server
-            //service_type = "_grpc._tcp.local.";				//service-type.domain
-            // service_name + service_type => simple_http._tcp.local
-            //String service_name = "GrpcServer";
             int service_port = port;
-            String service_desc = "test integration of jmDNS with gRPC";
+            String service_desc = "Integration of jmDNS with gRPC";
 
 
             //Create ServiceInfo -
@@ -37,23 +33,25 @@ public class HospitalServiceRegistration {
 
             jmdns.registerService(serviceInfo);
 
-            System.out.printf("registering service with type: %s and name: %s on port %d ", service_type, service_name, service_port);
+            System.out.printf("Registering Service with type: %s and name: %s on port %d ",
+                    service_type, service_name, service_port);
 
-            //sleep for 10 seconds
+            //sleep for 1 second
             Thread.sleep(1000);
             System.out.println("\nService Registered");
+
             //unregister the services
             //jmdns.unregisterAllServices();   //you could also unregister a single service
 
 
         } catch (UnknownHostException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
 

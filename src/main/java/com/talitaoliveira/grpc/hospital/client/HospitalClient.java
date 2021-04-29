@@ -71,7 +71,9 @@ public class HospitalClient {
 
         //doClientStreamingCallPatientAverage(channel);
 
-        //doServerStreamingCallDoctor(channel2);
+        doServerStreamingCallDoctor(channel2);
+
+        doUnaryCallRegisterDoctor(channel2);
 
         doBidirectionalCallBeds(channel3);
 
@@ -84,11 +86,11 @@ public class HospitalClient {
 
     //call the patient
     private void doUnaryCallPatient(ManagedChannel channel){
-        // A.created a patient service client (blocking synchronous)
+        // creating a patient service client (blocking synchronous)
         PatientServiceGrpc.PatientServiceBlockingStub patientClient = PatientServiceGrpc.newBlockingStub
                 (channel);
 
-        // A.created a protocol buffer patient message
+        // creating a protocol buffer patient message
         PatientId patientId = PatientId.newBuilder()
                 .setPpsNo("PJ454002")
                 .setFirstName("John")
@@ -180,6 +182,29 @@ public class HospitalClient {
         // stream the responses in a block manner
         doctorClient.doctor(doctorRequest)
                 .forEachRemaining(doctorResponse -> System.out.println(doctorResponse.getResult()));
+    }
+
+    //call register doctor
+    private void doUnaryCallRegisterDoctor(ManagedChannel channel2){
+
+        DoctorServiceGrpc.DoctorServiceBlockingStub registerDoctorClient = DoctorServiceGrpc.newBlockingStub
+                (channel2);
+        // creates a protocol buffer message
+        DoctorId doctorId = DoctorId.newBuilder()
+                .setFirstName("Marie")
+                .setLastName("Curie")
+                .setSpecialty("Surgery")
+                .build();
+
+        RegisterDoctorRequest registerDoctorRequest = RegisterDoctorRequest.newBuilder()
+                .setDoctorId(doctorId)
+                .build();
+
+        RegisterDoctorResponse registerDoctorResponse = registerDoctorClient.registerDoctor
+                (registerDoctorRequest);
+
+        System.out.println(registerDoctorResponse.getResult());
+
     }
 
     //call the bedsAvailable

@@ -8,7 +8,6 @@ import java.beans.PropertyChangeListener;
 import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -16,9 +15,7 @@ import javax.swing.border.EmptyBorder;
 import com.proto.beds.BedsAvailableRequest;
 import com.proto.beds.BedsAvailableResponse;
 import com.proto.beds.BedsServiceGrpc;
-import com.proto.doctor.DoctorId;
-import com.proto.doctor.DoctorRequest;
-import com.proto.doctor.DoctorServiceGrpc;
+import com.proto.doctor.*;
 import com.proto.patient.*;
 
 import io.grpc.ManagedChannel;
@@ -42,6 +39,9 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
     private JTextField entry3d;
     private JTextField entry3e;
     private JTextField reply3;
+
+    private JTextField entry2a, entry2aa, entry2aaa;
+    private JTextArea reply2a;
 
     private JTextArea entry4;
     private JTextArea reply4;
@@ -106,11 +106,41 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
         reply2.setEditable(true);
         panel.add(reply2);
 
-
         panel.setLayout(boxlayout);
 
         return panel;
 
+    }
+
+    private JPanel getService2aJPanel() {
+        JPanel panel = new JPanel();
+        BoxLayout boxlayout = new BoxLayout(panel, BoxLayout.X_AXIS);
+
+        JLabel label = new JLabel("Register Doctor");
+        panel.add(label);
+        panel.add(Box.createRigidArea(new Dimension(10, 0)));
+
+        entry2a = new JTextField("First Name", 10);
+        panel.add(entry2a);
+        panel.add(Box.createRigidArea(new Dimension(10, 10)));
+        entry2aa = new JTextField("Last Name", 10);
+        panel.add(entry2aa);
+        panel.add(Box.createRigidArea(new Dimension(10, 10)));
+        entry2aaa = new JTextField("Specialty", 10);
+        panel.add(entry2aaa);
+        panel.add(Box.createRigidArea(new Dimension(10, 10)));
+
+        JButton button = new JButton("Register Doctor");
+        button.addActionListener(this);
+        panel.add(button);
+        panel.add(Box.createRigidArea(new Dimension(10, 0)));
+
+        reply2a = new JTextArea(10, 10);
+        reply2a.setEditable(true);
+        panel.add(reply2a);
+
+        panel.setLayout(boxlayout);
+        return panel;
     }
 
     private JPanel getService3JPanel() {
@@ -214,6 +244,7 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
 
         panel.add(getService1JPanel());
         panel.add(getService2JPanel());
+        panel.add(getService2aJPanel());
         panel.add(getService3JPanel());
         panel.add(getService4JPanel());
 
@@ -244,7 +275,7 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
                     .usePlaintext()
                     .build();
             PatientServiceGrpc.PatientServiceBlockingStub patientClient = PatientServiceGrpc.newBlockingStub(channel);
-            //Service1Grpc.Service1BlockingStub blockingStub = Service1Grpc.newBlockingStub(channel);
+
 
             PatientId patientId = PatientId.newBuilder()
                     .setPpsNo(entry1.getText())
@@ -266,7 +297,7 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
             reply1.setText(String.valueOf(patientResponse.getResult()));
 
         } else if (label.equals("Find Doctors")) {
-            System.out.println("service 2 to be invoked ...");
+            System.out.println("Find Doctors to be invoked ...");
             ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50052)
                     .usePlaintext()
                     .build();
@@ -281,7 +312,7 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
             // preparing message to send
 
             new Thread(() -> {
-                AtomicInteger call = new AtomicInteger();
+
 
                 try {
                     reply2.setText("Searching for Available Doctors...\n");
@@ -303,6 +334,33 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
                     JOptionPane.showConfirmDialog(null , "Server Not running");
                 }
             }).start();
+
+        } else if (label.equals("Register Doctor")){
+            System.out.println("Register Doctor to be invoked ...");
+
+            ManagedChannel channelA = ManagedChannelBuilder.forAddress("localhost", 50052)
+                    .usePlaintext()
+                    .build();
+            DoctorServiceGrpc.DoctorServiceBlockingStub registerDoctorClient = DoctorServiceGrpc.newBlockingStub
+                    (channelA);
+
+            // sets the fields to be entered by the user
+            DoctorId doctorId = DoctorId.newBuilder()
+                    .setFirstName(entry2a.getText())
+                    .setLastName(entry2aa.getText())
+                    .setSpecialty(entry2aaa.getText())
+                    .build();
+
+            RegisterDoctorRequest registerDoctorRequest = RegisterDoctorRequest.newBuilder()
+                    .setDoctorId(doctorId)
+                    .build();
+
+            RegisterDoctorResponse registerDoctorResponse = registerDoctorClient.registerDoctor(registerDoctorRequest);
+
+            System.out.println(registerDoctorResponse.getResult());
+
+            reply2a.append(String.valueOf(registerDoctorResponse.getResult()));
+
 
         } else if (label.equals("Calculate Average")) {
             System.out.println("service 3 to be invoked ...");
