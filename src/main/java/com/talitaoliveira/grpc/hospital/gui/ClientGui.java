@@ -226,7 +226,7 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
         gui.build();
     }
 
-    private void build() {
+    public void build() {
 
         JFrame frame = new JFrame("Hospital-GUI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

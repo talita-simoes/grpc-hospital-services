@@ -9,10 +9,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 public class HospitalServiceDiscovery {
-    private int port;
-    private String host;
 
-    //option 1
     private static class MyServiceListener implements ServiceListener{
 
         private int port;
@@ -79,13 +76,14 @@ public class HospitalServiceDiscovery {
 
             //need to listen for services added/removed etc.
 
-            //jmdns.addServiceListener(service_type, new MyServiceListener());         //listen for specified type
+            // listen for specified type
             MyServiceListener msl = new MyServiceListener();
+
             jmdns.addServiceListener(service_type, msl);
 
 
-            //sleep for 10 seconds
-            Thread.sleep(10000);
+            //sleep for 5 seconds
+            Thread.sleep(5000L);
 
             serviceInfo = msl.getServiceInfo();
             port = msl.getPort();

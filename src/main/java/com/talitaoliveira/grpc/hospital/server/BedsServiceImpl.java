@@ -44,6 +44,7 @@ public class BedsServiceImpl extends BedsServiceGrpc.BedsServiceImplBase {
 
             @Override
             public void onError(Throwable t) {
+
                 responseObserver.onCompleted();
             }
 

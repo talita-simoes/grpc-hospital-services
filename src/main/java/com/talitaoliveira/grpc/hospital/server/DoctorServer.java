@@ -9,7 +9,8 @@ import java.io.IOException;
 public class DoctorServer {
     public static void main(String[] args) throws InterruptedException, IOException {
 
-        // jmDNS register
+        // jmDNS REGISTER SERVICE ---------------------------------------------------
+        System.out.println("Registering Service...");
         int port = 50052;
         String service_type = "_doctor._tcp.local.";
         String service_name = "doctor_service";
@@ -17,7 +18,7 @@ public class DoctorServer {
         dsr.run(port, service_type, service_name);
 
 
-        System.out.println("Doctor Server started");
+        System.out.println("\nDoctor Server started");
         //set the port and add the services implemented
         Server server = ServerBuilder.forPort(port)
                 .addService(new DoctorServiceImpl())

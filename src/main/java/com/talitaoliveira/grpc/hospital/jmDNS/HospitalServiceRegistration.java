@@ -33,7 +33,7 @@ public class HospitalServiceRegistration {
 
             jmdns.registerService(serviceInfo);
 
-            System.out.printf("Registering Service with type: %s and name: %s on port %d ",
+            System.out.printf("Registering Service with \n Type: %s \n Name: %s \n Port: %d ",
                     service_type, service_name, service_port);
 
             //sleep for 1 second

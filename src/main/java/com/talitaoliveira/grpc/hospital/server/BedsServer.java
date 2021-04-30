@@ -8,6 +8,9 @@ import java.io.IOException;
 
 public class BedsServer {
     public static void main(String[] args) throws InterruptedException, IOException {
+
+        // jmDNS REGISTER SERVICE ---------------------------------------------------
+        System.out.println("Registering Service...");
         int port = 50053;
         String service_type = "_beds._tcp.local.";
         String service_name = "beds_service";
@@ -15,7 +18,7 @@ public class BedsServer {
         bsr.run(port, service_type, service_name);
 
 
-        System.out.println("Beds Server started");
+        System.out.println("Beds Server Started");
 
         //set the port and add the services implemented
         Server server = ServerBuilder.forPort(port)
