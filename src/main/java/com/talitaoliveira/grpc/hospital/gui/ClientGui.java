@@ -226,7 +226,7 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
         gui.build();
     }
 
-    public void build() {
+    private void build() {
 
         JFrame frame = new JFrame("Hospital-GUI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -431,12 +431,6 @@ public class ClientGui implements ActionListener, PropertyChangeListener {
             } catch (InterruptedException ec) {
                 ec.printStackTrace();
             }
-//            ds.service3.RequestMessage request = ds.service3.RequestMessage.newBuilder().setText(entry3.getText()).build();
-//
-//            //retrieving reply from service
-//            ds.service3.ResponseMessage response = blockingStub.service3Do(request);
-             //reply3.setText(Double.valueOf());
-//           reply3.setText( String.valueOf( response.getLength()) );
 
         }else if (label.equals("Invoke Service 4")) {
 //            System.out.println("service 4 to be invoked ...");
