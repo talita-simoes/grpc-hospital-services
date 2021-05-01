@@ -1,0 +1,160 @@
+proto/main/java/com/proto/patient/PatientRequest.java
+ com.proto.patient.PatientRequest
+ com.proto.patient.PatientRequest$1
+ com.proto.patient.PatientRequest$Builder
+proto/main/grpc/com/proto/beds/BedsServiceGrpc.java
+ com.proto.beds.BedsServiceGrpc
+ com.proto.beds.BedsServiceGrpc$1
+ com.proto.beds.BedsServiceGrpc$2
+ com.proto.beds.BedsServiceGrpc$3
+ com.proto.beds.BedsServiceGrpc$BedsServiceBaseDescriptorSupplier
+ com.proto.beds.BedsServiceGrpc$BedsServiceBlockingStub
+ com.proto.beds.BedsServiceGrpc$BedsServiceFileDescriptorSupplier
+ com.proto.beds.BedsServiceGrpc$BedsServiceFutureStub
+ com.proto.beds.BedsServiceGrpc$BedsServiceImplBase
+ com.proto.beds.BedsServiceGrpc$BedsServiceMethodDescriptorSupplier
+ com.proto.beds.BedsServiceGrpc$BedsServiceStub
+ com.proto.beds.BedsServiceGrpc$MethodHandlers
+proto/main/java/com/proto/patient/Patient.java
+ com.proto.patient.Patient
+proto/main/java/com/proto/beds/BedsMessageResponseOrBuilder.java
+ com.proto.beds.BedsMessageResponseOrBuilder
+proto/main/java/com/proto/doctor/DoctorResponseOrBuilder.java
+ com.proto.doctor.DoctorResponseOrBuilder
+proto/main/java/com/proto/doctor/DoctorIdOrBuilder.java
+ com.proto.doctor.DoctorIdOrBuilder
+proto/main/java/com/proto/doctor/Doctor.java
+ com.proto.doctor.Doctor
+proto/main/java/com/proto/doctor/DoctorRequestOrBuilder.java
+ com.proto.doctor.DoctorRequestOrBuilder
+proto/main/java/com/proto/beds/Beds.java
+ com.proto.beds.Beds
+com/talitaoliveira/grpc/hospital/server/BedsServiceImpl.java
+ com.talitaoliveira.grpc.hospital.server.BedsServiceImpl
+ com.talitaoliveira.grpc.hospital.server.BedsServiceImpl$1
+ com.talitaoliveira.grpc.hospital.server.BedsServiceImpl$2
+proto/main/java/com/proto/patient/PatientRequestOrBuilder.java
+ com.proto.patient.PatientRequestOrBuilder
+com/talitaoliveira/grpc/hospital/server/HospitalServer.java
+ com.talitaoliveira.grpc.hospital.server.HospitalServer
+proto/main/java/com/proto/patient/PatientAverageRequestOrBuilder.java
+ com.proto.patient.PatientAverageRequestOrBuilder
+proto/main/java/com/proto/doctor/DoctorResponse.java
+ com.proto.doctor.DoctorResponse
+ com.proto.doctor.DoctorResponse$1
+ com.proto.doctor.DoctorResponse$Builder
+com/talitaoliveira/grpc/hospital/server/PatientServiceImpl.java
+ com.talitaoliveira.grpc.hospital.server.PatientServiceImpl
+ com.talitaoliveira.grpc.hospital.server.PatientServiceImpl$1
+com/talitaoliveira/grpc/hospital/server/DoctorServiceImpl.java
+ com.talitaoliveira.grpc.hospital.server.DoctorServiceImpl
+proto/main/java/com/proto/beds/BedsMessage.java
+ com.proto.beds.BedsMessage
+ com.proto.beds.BedsMessage$1
+ com.proto.beds.BedsMessage$Builder
+proto/main/java/com/proto/beds/BedsAvailableResponseOrBuilder.java
+ com.proto.beds.BedsAvailableResponseOrBuilder
+proto/main/java/com/proto/patient/PatientId.java
+ com.proto.patient.PatientId
+ com.proto.patient.PatientId$1
+ com.proto.patient.PatientId$Builder
+proto/main/java/com/proto/doctor/DoctorId.java
+ com.proto.doctor.DoctorId
+ com.proto.doctor.DoctorId$1
+ com.proto.doctor.DoctorId$Builder
+proto/main/grpc/com/proto/HospitalTest/HospitalServiceGrpc.java
+ com.proto.HospitalTest.HospitalServiceGrpc
+ com.proto.HospitalTest.HospitalServiceGrpc$1
+ com.proto.HospitalTest.HospitalServiceGrpc$2
+ com.proto.HospitalTest.HospitalServiceGrpc$3
+ com.proto.HospitalTest.HospitalServiceGrpc$HospitalServiceBaseDescriptorSupplier
+ com.proto.HospitalTest.HospitalServiceGrpc$HospitalServiceBlockingStub
+ com.proto.HospitalTest.HospitalServiceGrpc$HospitalServiceFileDescriptorSupplier
+ com.proto.HospitalTest.HospitalServiceGrpc$HospitalServiceFutureStub
+ com.proto.HospitalTest.HospitalServiceGrpc$HospitalServiceImplBase
+ com.proto.HospitalTest.HospitalServiceGrpc$HospitalServiceMethodDescriptorSupplier
+ com.proto.HospitalTest.HospitalServiceGrpc$HospitalServiceStub
+ com.proto.HospitalTest.HospitalServiceGrpc$MethodHandlers
+proto/main/grpc/com/proto/patient/PatientServiceGrpc.java
+ com.proto.patient.PatientServiceGrpc
+ com.proto.patient.PatientServiceGrpc$1
+ com.proto.patient.PatientServiceGrpc$2
+ com.proto.patient.PatientServiceGrpc$3
+ com.proto.patient.PatientServiceGrpc$MethodHandlers
+ com.proto.patient.PatientServiceGrpc$PatientServiceBaseDescriptorSupplier
+ com.proto.patient.PatientServiceGrpc$PatientServiceBlockingStub
+ com.proto.patient.PatientServiceGrpc$PatientServiceFileDescriptorSupplier
+ com.proto.patient.PatientServiceGrpc$PatientServiceFutureStub
+ com.proto.patient.PatientServiceGrpc$PatientServiceImplBase
+ com.proto.patient.PatientServiceGrpc$PatientServiceMethodDescriptorSupplier
+ com.proto.patient.PatientServiceGrpc$PatientServiceStub
+proto/main/java/com/proto/patient/PatientIdOrBuilder.java
+ com.proto.patient.PatientIdOrBuilder
+proto/main/java/com/proto/beds/BedsAvailableResponse.java
+ com.proto.beds.BedsAvailableResponse
+ com.proto.beds.BedsAvailableResponse$1
+ com.proto.beds.BedsAvailableResponse$Builder
+proto/main/java/com/proto/patient/PatientResponseOrBuilder.java
+ com.proto.patient.PatientResponseOrBuilder
+proto/main/java/com/proto/HospitalTest/HospitalMessageOrBuilder.java
+ com.proto.HospitalTest.HospitalMessageOrBuilder
+proto/main/java/com/proto/beds/BedsMessageOrBuilder.java
+ com.proto.beds.BedsMessageOrBuilder
+proto/main/java/com/proto/HospitalTest/HospitalMessage.java
+ com.proto.HospitalTest.HospitalMessage
+ com.proto.HospitalTest.HospitalMessage$1
+ com.proto.HospitalTest.HospitalMessage$Builder
+proto/main/java/com/proto/patient/PatientResponse.java
+ com.proto.patient.PatientResponse
+ com.proto.patient.PatientResponse$1
+ com.proto.patient.PatientResponse$Builder
+proto/main/java/com/proto/beds/BedsAvailableRequest.java
+ com.proto.beds.BedsAvailableRequest
+ com.proto.beds.BedsAvailableRequest$1
+ com.proto.beds.BedsAvailableRequest$Builder
+proto/main/java/com/proto/doctor/DoctorRequest.java
+ com.proto.doctor.DoctorRequest
+ com.proto.doctor.DoctorRequest$1
+ com.proto.doctor.DoctorRequest$Builder
+proto/main/java/com/proto/beds/BedsMessageRequestOrBuilder.java
+ com.proto.beds.BedsMessageRequestOrBuilder
+com/talitaoliveira/grpc/hospital/client/HospitalClient.java
+ com.talitaoliveira.grpc.hospital.client.HospitalClient
+ com.talitaoliveira.grpc.hospital.client.HospitalClient$1
+ com.talitaoliveira.grpc.hospital.client.HospitalClient$2
+ com.talitaoliveira.grpc.hospital.client.HospitalClient$3
+proto/main/java/com/proto/beds/BedsMessageRequest.java
+ com.proto.beds.BedsMessageRequest
+ com.proto.beds.BedsMessageRequest$1
+ com.proto.beds.BedsMessageRequest$Builder
+proto/main/java/com/proto/patient/PatientAverageRequest.java
+ com.proto.patient.PatientAverageRequest
+ com.proto.patient.PatientAverageRequest$1
+ com.proto.patient.PatientAverageRequest$Builder
+proto/main/grpc/com/proto/doctor/DoctorServiceGrpc.java
+ com.proto.doctor.DoctorServiceGrpc
+ com.proto.doctor.DoctorServiceGrpc$1
+ com.proto.doctor.DoctorServiceGrpc$2
+ com.proto.doctor.DoctorServiceGrpc$3
+ com.proto.doctor.DoctorServiceGrpc$DoctorServiceBaseDescriptorSupplier
+ com.proto.doctor.DoctorServiceGrpc$DoctorServiceBlockingStub
+ com.proto.doctor.DoctorServiceGrpc$DoctorServiceFileDescriptorSupplier
+ com.proto.doctor.DoctorServiceGrpc$DoctorServiceFutureStub
+ com.proto.doctor.DoctorServiceGrpc$DoctorServiceImplBase
+ com.proto.doctor.DoctorServiceGrpc$DoctorServiceMethodDescriptorSupplier
+ com.proto.doctor.DoctorServiceGrpc$DoctorServiceStub
+ com.proto.doctor.DoctorServiceGrpc$MethodHandlers
+proto/main/java/com/proto/beds/BedsMessageResponse.java
+ com.proto.beds.BedsMessageResponse
+ com.proto.beds.BedsMessageResponse$1
+ com.proto.beds.BedsMessageResponse$Builder
+proto/main/java/com/proto/patient/PatientAverageResponseOrBuilder.java
+ com.proto.patient.PatientAverageResponseOrBuilder
+proto/main/java/com/proto/beds/BedsAvailableRequestOrBuilder.java
+ com.proto.beds.BedsAvailableRequestOrBuilder
+proto/main/java/com/proto/patient/PatientAverageResponse.java
+ com.proto.patient.PatientAverageResponse
+ com.proto.patient.PatientAverageResponse$1
+ com.proto.patient.PatientAverageResponse$Builder
+proto/main/java/com/proto/HospitalTest/Servicetest.java
+ com.proto.HospitalTest.Servicetest
