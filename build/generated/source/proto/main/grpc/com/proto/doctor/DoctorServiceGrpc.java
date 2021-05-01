@@ -3,9 +3,6 @@ package com.proto.doctor;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
- * <pre>
- * Server Streaming
- * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.36.0)",
@@ -124,13 +121,13 @@ public final class DoctorServiceGrpc {
   }
 
   /**
-   * <pre>
-   * Server Streaming
-   * </pre>
    */
   public static abstract class DoctorServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * Server Streaming
+     * </pre>
      */
     public void doctor(com.proto.doctor.DoctorRequest request,
         io.grpc.stub.StreamObserver<com.proto.doctor.DoctorResponse> responseObserver) {
@@ -168,9 +165,6 @@ public final class DoctorServiceGrpc {
   }
 
   /**
-   * <pre>
-   * Server Streaming
-   * </pre>
    */
   public static final class DoctorServiceStub extends io.grpc.stub.AbstractAsyncStub<DoctorServiceStub> {
     private DoctorServiceStub(
@@ -185,6 +179,9 @@ public final class DoctorServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Server Streaming
+     * </pre>
      */
     public void doctor(com.proto.doctor.DoctorRequest request,
         io.grpc.stub.StreamObserver<com.proto.doctor.DoctorResponse> responseObserver) {
@@ -205,9 +202,6 @@ public final class DoctorServiceGrpc {
   }
 
   /**
-   * <pre>
-   * Server Streaming
-   * </pre>
    */
   public static final class DoctorServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<DoctorServiceBlockingStub> {
     private DoctorServiceBlockingStub(
@@ -222,6 +216,9 @@ public final class DoctorServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Server Streaming
+     * </pre>
      */
     public java.util.Iterator<com.proto.doctor.DoctorResponse> doctor(
         com.proto.doctor.DoctorRequest request) {
@@ -241,9 +238,6 @@ public final class DoctorServiceGrpc {
   }
 
   /**
-   * <pre>
-   * Server Streaming
-   * </pre>
    */
   public static final class DoctorServiceFutureStub extends io.grpc.stub.AbstractFutureStub<DoctorServiceFutureStub> {
     private DoctorServiceFutureStub(

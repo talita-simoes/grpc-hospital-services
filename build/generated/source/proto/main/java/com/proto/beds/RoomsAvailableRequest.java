@@ -4,25 +4,26 @@
 package com.proto.beds;
 
 /**
- * Protobuf type {@code beds.BedsMessageRequest}
+ * Protobuf type {@code beds.RoomsAvailableRequest}
  */
-public final class BedsMessageRequest extends
+public final class RoomsAvailableRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:beds.BedsMessageRequest)
-    BedsMessageRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:beds.RoomsAvailableRequest)
+    RoomsAvailableRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use BedsMessageRequest.newBuilder() to construct.
-  private BedsMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use RoomsAvailableRequest.newBuilder() to construct.
+  private RoomsAvailableRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private BedsMessageRequest() {
+  private RoomsAvailableRequest() {
+    floor_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new BedsMessageRequest();
+    return new RoomsAvailableRequest();
   }
 
   @java.lang.Override
@@ -30,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private BedsMessageRequest(
+  private RoomsAvailableRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -49,16 +50,9 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.proto.beds.BedsMessage.Builder subBuilder = null;
-            if (bedsMessage_ != null) {
-              subBuilder = bedsMessage_.toBuilder();
-            }
-            bedsMessage_ = input.readMessage(com.proto.beds.BedsMessage.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(bedsMessage_);
-              bedsMessage_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            floor_ = s;
             break;
           }
           default: {
@@ -82,41 +76,53 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.proto.beds.Beds.internal_static_beds_BedsMessageRequest_descriptor;
+    return com.proto.beds.Beds.internal_static_beds_RoomsAvailableRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.proto.beds.Beds.internal_static_beds_BedsMessageRequest_fieldAccessorTable
+    return com.proto.beds.Beds.internal_static_beds_RoomsAvailableRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.proto.beds.BedsMessageRequest.class, com.proto.beds.BedsMessageRequest.Builder.class);
+            com.proto.beds.RoomsAvailableRequest.class, com.proto.beds.RoomsAvailableRequest.Builder.class);
   }
 
-  public static final int BEDSMESSAGE_FIELD_NUMBER = 1;
-  private com.proto.beds.BedsMessage bedsMessage_;
+  public static final int FLOOR_FIELD_NUMBER = 1;
+  private volatile java.lang.Object floor_;
   /**
-   * <code>.beds.BedsMessage bedsMessage = 1;</code>
-   * @return Whether the bedsMessage field is set.
+   * <code>string floor = 1;</code>
+   * @return The floor.
    */
   @java.lang.Override
-  public boolean hasBedsMessage() {
-    return bedsMessage_ != null;
+  public java.lang.String getFloor() {
+    java.lang.Object ref = floor_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      floor_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.beds.BedsMessage bedsMessage = 1;</code>
-   * @return The bedsMessage.
+   * <code>string floor = 1;</code>
+   * @return The bytes for floor.
    */
   @java.lang.Override
-  public com.proto.beds.BedsMessage getBedsMessage() {
-    return bedsMessage_ == null ? com.proto.beds.BedsMessage.getDefaultInstance() : bedsMessage_;
-  }
-  /**
-   * <code>.beds.BedsMessage bedsMessage = 1;</code>
-   */
-  @java.lang.Override
-  public com.proto.beds.BedsMessageOrBuilder getBedsMessageOrBuilder() {
-    return getBedsMessage();
+  public com.google.protobuf.ByteString
+      getFloorBytes() {
+    java.lang.Object ref = floor_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      floor_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +139,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (bedsMessage_ != null) {
-      output.writeMessage(1, getBedsMessage());
+    if (!getFloorBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, floor_);
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +151,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (bedsMessage_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getBedsMessage());
+    if (!getFloorBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, floor_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -159,16 +164,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.proto.beds.BedsMessageRequest)) {
+    if (!(obj instanceof com.proto.beds.RoomsAvailableRequest)) {
       return super.equals(obj);
     }
-    com.proto.beds.BedsMessageRequest other = (com.proto.beds.BedsMessageRequest) obj;
+    com.proto.beds.RoomsAvailableRequest other = (com.proto.beds.RoomsAvailableRequest) obj;
 
-    if (hasBedsMessage() != other.hasBedsMessage()) return false;
-    if (hasBedsMessage()) {
-      if (!getBedsMessage()
-          .equals(other.getBedsMessage())) return false;
-    }
+    if (!getFloor()
+        .equals(other.getFloor())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,78 +182,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasBedsMessage()) {
-      hash = (37 * hash) + BEDSMESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getBedsMessage().hashCode();
-    }
+    hash = (37 * hash) + FLOOR_FIELD_NUMBER;
+    hash = (53 * hash) + getFloor().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.proto.beds.BedsMessageRequest parseFrom(
+  public static com.proto.beds.RoomsAvailableRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.beds.BedsMessageRequest parseFrom(
+  public static com.proto.beds.RoomsAvailableRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.beds.BedsMessageRequest parseFrom(
+  public static com.proto.beds.RoomsAvailableRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.beds.BedsMessageRequest parseFrom(
+  public static com.proto.beds.RoomsAvailableRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.beds.BedsMessageRequest parseFrom(byte[] data)
+  public static com.proto.beds.RoomsAvailableRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.beds.BedsMessageRequest parseFrom(
+  public static com.proto.beds.RoomsAvailableRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.beds.BedsMessageRequest parseFrom(java.io.InputStream input)
+  public static com.proto.beds.RoomsAvailableRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.proto.beds.BedsMessageRequest parseFrom(
+  public static com.proto.beds.RoomsAvailableRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.proto.beds.BedsMessageRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.proto.beds.RoomsAvailableRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.proto.beds.BedsMessageRequest parseDelimitedFrom(
+  public static com.proto.beds.RoomsAvailableRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.proto.beds.BedsMessageRequest parseFrom(
+  public static com.proto.beds.RoomsAvailableRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.proto.beds.BedsMessageRequest parseFrom(
+  public static com.proto.beds.RoomsAvailableRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -264,7 +264,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.proto.beds.BedsMessageRequest prototype) {
+  public static Builder newBuilder(com.proto.beds.RoomsAvailableRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -280,26 +280,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code beds.BedsMessageRequest}
+   * Protobuf type {@code beds.RoomsAvailableRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:beds.BedsMessageRequest)
-      com.proto.beds.BedsMessageRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:beds.RoomsAvailableRequest)
+      com.proto.beds.RoomsAvailableRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.proto.beds.Beds.internal_static_beds_BedsMessageRequest_descriptor;
+      return com.proto.beds.Beds.internal_static_beds_RoomsAvailableRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.proto.beds.Beds.internal_static_beds_BedsMessageRequest_fieldAccessorTable
+      return com.proto.beds.Beds.internal_static_beds_RoomsAvailableRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.proto.beds.BedsMessageRequest.class, com.proto.beds.BedsMessageRequest.Builder.class);
+              com.proto.beds.RoomsAvailableRequest.class, com.proto.beds.RoomsAvailableRequest.Builder.class);
     }
 
-    // Construct using com.proto.beds.BedsMessageRequest.newBuilder()
+    // Construct using com.proto.beds.RoomsAvailableRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -317,29 +317,25 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (bedsMessageBuilder_ == null) {
-        bedsMessage_ = null;
-      } else {
-        bedsMessage_ = null;
-        bedsMessageBuilder_ = null;
-      }
+      floor_ = "";
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.proto.beds.Beds.internal_static_beds_BedsMessageRequest_descriptor;
+      return com.proto.beds.Beds.internal_static_beds_RoomsAvailableRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.proto.beds.BedsMessageRequest getDefaultInstanceForType() {
-      return com.proto.beds.BedsMessageRequest.getDefaultInstance();
+    public com.proto.beds.RoomsAvailableRequest getDefaultInstanceForType() {
+      return com.proto.beds.RoomsAvailableRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.proto.beds.BedsMessageRequest build() {
-      com.proto.beds.BedsMessageRequest result = buildPartial();
+    public com.proto.beds.RoomsAvailableRequest build() {
+      com.proto.beds.RoomsAvailableRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -347,13 +343,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.proto.beds.BedsMessageRequest buildPartial() {
-      com.proto.beds.BedsMessageRequest result = new com.proto.beds.BedsMessageRequest(this);
-      if (bedsMessageBuilder_ == null) {
-        result.bedsMessage_ = bedsMessage_;
-      } else {
-        result.bedsMessage_ = bedsMessageBuilder_.build();
-      }
+    public com.proto.beds.RoomsAvailableRequest buildPartial() {
+      com.proto.beds.RoomsAvailableRequest result = new com.proto.beds.RoomsAvailableRequest(this);
+      result.floor_ = floor_;
       onBuilt();
       return result;
     }
@@ -392,18 +384,19 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.proto.beds.BedsMessageRequest) {
-        return mergeFrom((com.proto.beds.BedsMessageRequest)other);
+      if (other instanceof com.proto.beds.RoomsAvailableRequest) {
+        return mergeFrom((com.proto.beds.RoomsAvailableRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.proto.beds.BedsMessageRequest other) {
-      if (other == com.proto.beds.BedsMessageRequest.getDefaultInstance()) return this;
-      if (other.hasBedsMessage()) {
-        mergeBedsMessage(other.getBedsMessage());
+    public Builder mergeFrom(com.proto.beds.RoomsAvailableRequest other) {
+      if (other == com.proto.beds.RoomsAvailableRequest.getDefaultInstance()) return this;
+      if (!other.getFloor().isEmpty()) {
+        floor_ = other.floor_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -420,11 +413,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.proto.beds.BedsMessageRequest parsedMessage = null;
+      com.proto.beds.RoomsAvailableRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.proto.beds.BedsMessageRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.proto.beds.RoomsAvailableRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -434,123 +427,80 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.proto.beds.BedsMessage bedsMessage_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.proto.beds.BedsMessage, com.proto.beds.BedsMessage.Builder, com.proto.beds.BedsMessageOrBuilder> bedsMessageBuilder_;
+    private java.lang.Object floor_ = "";
     /**
-     * <code>.beds.BedsMessage bedsMessage = 1;</code>
-     * @return Whether the bedsMessage field is set.
+     * <code>string floor = 1;</code>
+     * @return The floor.
      */
-    public boolean hasBedsMessage() {
-      return bedsMessageBuilder_ != null || bedsMessage_ != null;
-    }
-    /**
-     * <code>.beds.BedsMessage bedsMessage = 1;</code>
-     * @return The bedsMessage.
-     */
-    public com.proto.beds.BedsMessage getBedsMessage() {
-      if (bedsMessageBuilder_ == null) {
-        return bedsMessage_ == null ? com.proto.beds.BedsMessage.getDefaultInstance() : bedsMessage_;
+    public java.lang.String getFloor() {
+      java.lang.Object ref = floor_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        floor_ = s;
+        return s;
       } else {
-        return bedsMessageBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.beds.BedsMessage bedsMessage = 1;</code>
+     * <code>string floor = 1;</code>
+     * @return The bytes for floor.
      */
-    public Builder setBedsMessage(com.proto.beds.BedsMessage value) {
-      if (bedsMessageBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bedsMessage_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getFloorBytes() {
+      java.lang.Object ref = floor_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        floor_ = b;
+        return b;
       } else {
-        bedsMessageBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
-     * <code>.beds.BedsMessage bedsMessage = 1;</code>
+     * <code>string floor = 1;</code>
+     * @param value The floor to set.
+     * @return This builder for chaining.
      */
-    public Builder setBedsMessage(
-        com.proto.beds.BedsMessage.Builder builderForValue) {
-      if (bedsMessageBuilder_ == null) {
-        bedsMessage_ = builderForValue.build();
-        onChanged();
-      } else {
-        bedsMessageBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.beds.BedsMessage bedsMessage = 1;</code>
-     */
-    public Builder mergeBedsMessage(com.proto.beds.BedsMessage value) {
-      if (bedsMessageBuilder_ == null) {
-        if (bedsMessage_ != null) {
-          bedsMessage_ =
-            com.proto.beds.BedsMessage.newBuilder(bedsMessage_).mergeFrom(value).buildPartial();
-        } else {
-          bedsMessage_ = value;
-        }
-        onChanged();
-      } else {
-        bedsMessageBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.beds.BedsMessage bedsMessage = 1;</code>
-     */
-    public Builder clearBedsMessage() {
-      if (bedsMessageBuilder_ == null) {
-        bedsMessage_ = null;
-        onChanged();
-      } else {
-        bedsMessage_ = null;
-        bedsMessageBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.beds.BedsMessage bedsMessage = 1;</code>
-     */
-    public com.proto.beds.BedsMessage.Builder getBedsMessageBuilder() {
-      
+    public Builder setFloor(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      floor_ = value;
       onChanged();
-      return getBedsMessageFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.beds.BedsMessage bedsMessage = 1;</code>
+     * <code>string floor = 1;</code>
+     * @return This builder for chaining.
      */
-    public com.proto.beds.BedsMessageOrBuilder getBedsMessageOrBuilder() {
-      if (bedsMessageBuilder_ != null) {
-        return bedsMessageBuilder_.getMessageOrBuilder();
-      } else {
-        return bedsMessage_ == null ?
-            com.proto.beds.BedsMessage.getDefaultInstance() : bedsMessage_;
-      }
+    public Builder clearFloor() {
+      
+      floor_ = getDefaultInstance().getFloor();
+      onChanged();
+      return this;
     }
     /**
-     * <code>.beds.BedsMessage bedsMessage = 1;</code>
+     * <code>string floor = 1;</code>
+     * @param value The bytes for floor to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.proto.beds.BedsMessage, com.proto.beds.BedsMessage.Builder, com.proto.beds.BedsMessageOrBuilder> 
-        getBedsMessageFieldBuilder() {
-      if (bedsMessageBuilder_ == null) {
-        bedsMessageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.proto.beds.BedsMessage, com.proto.beds.BedsMessage.Builder, com.proto.beds.BedsMessageOrBuilder>(
-                getBedsMessage(),
-                getParentForChildren(),
-                isClean());
-        bedsMessage_ = null;
-      }
-      return bedsMessageBuilder_;
+    public Builder setFloorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      floor_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -565,41 +515,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:beds.BedsMessageRequest)
+    // @@protoc_insertion_point(builder_scope:beds.RoomsAvailableRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:beds.BedsMessageRequest)
-  private static final com.proto.beds.BedsMessageRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:beds.RoomsAvailableRequest)
+  private static final com.proto.beds.RoomsAvailableRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.proto.beds.BedsMessageRequest();
+    DEFAULT_INSTANCE = new com.proto.beds.RoomsAvailableRequest();
   }
 
-  public static com.proto.beds.BedsMessageRequest getDefaultInstance() {
+  public static com.proto.beds.RoomsAvailableRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BedsMessageRequest>
-      PARSER = new com.google.protobuf.AbstractParser<BedsMessageRequest>() {
+  private static final com.google.protobuf.Parser<RoomsAvailableRequest>
+      PARSER = new com.google.protobuf.AbstractParser<RoomsAvailableRequest>() {
     @java.lang.Override
-    public BedsMessageRequest parsePartialFrom(
+    public RoomsAvailableRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new BedsMessageRequest(input, extensionRegistry);
+      return new RoomsAvailableRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<BedsMessageRequest> parser() {
+  public static com.google.protobuf.Parser<RoomsAvailableRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<BedsMessageRequest> getParserForType() {
+  public com.google.protobuf.Parser<RoomsAvailableRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.proto.beds.BedsMessageRequest getDefaultInstanceForType() {
+  public com.proto.beds.RoomsAvailableRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

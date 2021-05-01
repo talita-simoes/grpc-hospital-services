@@ -25,20 +25,15 @@ public final class Beds {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_beds_BedsAvailableResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_beds_BedsMessage_descriptor;
+    internal_static_beds_RoomsAvailableRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_beds_BedsMessage_fieldAccessorTable;
+      internal_static_beds_RoomsAvailableRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_beds_BedsMessageRequest_descriptor;
+    internal_static_beds_RoomsAvailableResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_beds_BedsMessageRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_beds_BedsMessageResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_beds_BedsMessageResponse_fieldAccessorTable;
+      internal_static_beds_RoomsAvailableResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -51,16 +46,14 @@ public final class Beds {
       "\n\017beds/beds.proto\022\004beds\"<\n\024BedsAvailable" +
       "Request\022\020\n\010numberGo\030\001 \001(\005\022\022\n\nnumberBase\030" +
       "\002 \001(\005\"+\n\025BedsAvailableResponse\022\022\n\nnumber" +
-      "Back\030\001 \001(\005\"C\n\013BedsMessage\022\020\n\010message1\030\001 " +
-      "\001(\t\022\020\n\010message2\030\002 \001(\t\022\020\n\010message3\030\003 \001(\t\"" +
-      "<\n\022BedsMessageRequest\022&\n\013bedsMessage\030\001 \001" +
-      "(\0132\021.beds.BedsMessage\".\n\023BedsMessageResp" +
-      "onse\022\027\n\017messageToReturn\030\001 \001(\t2\247\001\n\013BedsSe" +
-      "rvice\022N\n\rBedsAvailable\022\032.beds.BedsAvaila" +
-      "bleRequest\032\033.beds.BedsAvailableResponse\"" +
-      "\000(\0010\001\022H\n\013BedsMessage\022\030.beds.BedsMessageR" +
-      "equest\032\031.beds.BedsMessageResponse\"\000(\0010\001B" +
-      "\022\n\016com.proto.bedsP\001b\006proto3"
+      "Back\030\001 \001(\005\"&\n\025RoomsAvailableRequest\022\r\n\005f" +
+      "loor\030\001 \001(\t\"(\n\026RoomsAvailableResponse\022\016\n\006" +
+      "result\030\001 \001(\t2\256\001\n\013BedsService\022N\n\rBedsAvai" +
+      "lable\022\032.beds.BedsAvailableRequest\032\033.beds" +
+      ".BedsAvailableResponse\"\000(\0010\001\022O\n\016RoomsAva" +
+      "ilable\022\033.beds.RoomsAvailableRequest\032\034.be" +
+      "ds.RoomsAvailableResponse\"\0000\001B\022\n\016com.pro" +
+      "to.bedsP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -78,24 +71,18 @@ public final class Beds {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_beds_BedsAvailableResponse_descriptor,
         new java.lang.String[] { "NumberBack", });
-    internal_static_beds_BedsMessage_descriptor =
+    internal_static_beds_RoomsAvailableRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_beds_BedsMessage_fieldAccessorTable = new
+    internal_static_beds_RoomsAvailableRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_beds_BedsMessage_descriptor,
-        new java.lang.String[] { "Message1", "Message2", "Message3", });
-    internal_static_beds_BedsMessageRequest_descriptor =
+        internal_static_beds_RoomsAvailableRequest_descriptor,
+        new java.lang.String[] { "Floor", });
+    internal_static_beds_RoomsAvailableResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_beds_BedsMessageRequest_fieldAccessorTable = new
+    internal_static_beds_RoomsAvailableResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_beds_BedsMessageRequest_descriptor,
-        new java.lang.String[] { "BedsMessage", });
-    internal_static_beds_BedsMessageResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_beds_BedsMessageResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_beds_BedsMessageResponse_descriptor,
-        new java.lang.String[] { "MessageToReturn", });
+        internal_static_beds_RoomsAvailableResponse_descriptor,
+        new java.lang.String[] { "Result", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

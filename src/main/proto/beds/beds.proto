@@ -15,24 +15,21 @@ message BedsAvailableResponse {
   int32  numberBack = 1;
 }
 
-message BedsMessage {
-  string message1 = 1;
-  string message2 = 2;
-  string message3 = 3;
+message RoomsAvailableRequest {
+  string floor =1;
 }
 
-message BedsMessageRequest {
-  BedsMessage bedsMessage = 1;
+message RoomsAvailableResponse {
+  string result =1;
 }
 
-message BedsMessageResponse {
-  string messageToReturn = 1;
-}
-
-// Bidirectional Streaming API
 service BedsService {
 
-  rpc BedsAvailable(stream BedsAvailableRequest) returns (stream BedsAvailableResponse) {};//function
   // Bidirectional Streaming API
-  rpc BedsMessage(stream BedsMessageRequest) returns (stream BedsMessageResponse) {};
+  rpc BedsAvailable(stream BedsAvailableRequest) returns (stream BedsAvailableResponse) {};
+
+  // Server Streaming
+  rpc RoomsAvailable(RoomsAvailableRequest) returns (stream RoomsAvailableResponse) {};
+
+
 }

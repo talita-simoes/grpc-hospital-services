@@ -3,6 +3,7 @@ package com.talitaoliveira.grpc.hospital.server;
 import com.proto.beds.*;
 import io.grpc.stub.StreamObserver;
 
+
 public class BedsServiceImpl extends BedsServiceGrpc.BedsServiceImplBase {
 
     @Override
@@ -60,34 +61,94 @@ public class BedsServiceImpl extends BedsServiceGrpc.BedsServiceImplBase {
 
         };
     }
-    //Bidirectional call for testing strings
-//    @Override
-//    public StreamObserver<BedsMessageRequest> bedsMessage(StreamObserver<BedsMessageResponse> responseObserver) {
-//
-//        StreamObserver<BedsMessageRequest> requestObserver =
-//                new StreamObserver<BedsMessageRequest>() {
-//                    @Override
-//                    public void onNext(BedsMessageRequest value) {
-//                        String result = "FirstMessageSent: " + value.getBedsMessage().getMessage1();
-//                        BedsMessageResponse bedsMessageResponse = BedsMessageResponse.newBuilder()
-//                                .setMessageToReturn(result)
-//                                .build();
-//
-//                        //send this message back on the response observer
-//                        responseObserver.onNext(bedsMessageResponse);
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable t) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onCompleted() {
-//                        responseObserver.onCompleted();
-//                    }
-//                };
-//        return requestObserver;
-//    }
 
-}
+    @Override
+    public void roomsAvailable(RoomsAvailableRequest request,
+                               StreamObserver<RoomsAvailableResponse> responseObserver) {
+        String floor = request.getFloor();
+
+        if (floor.equals("1")) {
+            try {
+                String[] arr = {"101", "103", "105", "109"};
+                for (String s : arr) {
+                    String result = "Single Room: " + s +" on the " + floor + "st floor.";
+                    RoomsAvailableResponse response = RoomsAvailableResponse.newBuilder()
+                            .setResult(result)
+                            .build();
+                    responseObserver.onNext(response);
+                    Thread.sleep(1000L);
+                }
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                responseObserver.onCompleted();
+            }
+
+        } if (floor.equals("2")) {
+            try {
+                String[] arr = {"202", "204", "205", "208"};
+                for (String s : arr) {
+                    String result = "Single Room: " + s +" on the " + floor + "nd floor.";
+                    RoomsAvailableResponse response = RoomsAvailableResponse.newBuilder()
+                            .setResult(result)
+                            .build();
+                    responseObserver.onNext(response);
+                    Thread.sleep(1000L);
+                }
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                responseObserver.onCompleted();
+            }
+        }  if (floor.equals("3")) {
+            try {
+                String[] arr = {"313", "315", "302"};
+                for (String s : arr) {
+                    String result = "Single Room: " + s +" on the " + floor + "rd floor.";
+                    RoomsAvailableResponse response = RoomsAvailableResponse.newBuilder()
+                            .setResult(result)
+                            .build();
+                    responseObserver.onNext(response);
+                    Thread.sleep(1000L);
+                }
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                responseObserver.onCompleted();
+            }
+        } if (floor.equals("4")) {
+            try {
+                String[] arr = {"400", "401", "402", "404"};
+                for (String s : arr) {
+                    String result = "\nSingle Room: " + s +" on the " + floor + "th floor.";
+                    RoomsAvailableResponse response = RoomsAvailableResponse.newBuilder()
+                            .setResult(result)
+                            .build();
+                    responseObserver.onNext(response);
+                    Thread.sleep(1000L);
+                }
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                responseObserver.onCompleted();
+            }
+        } else {
+            String result = "No rooms on the " + floor + " floor.";
+            RoomsAvailableResponse response = RoomsAvailableResponse.newBuilder()
+                    .setResult(result)
+                    .build();
+            responseObserver.onNext(response);
+
+            try {
+                Thread.sleep(1000L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+}//end of class

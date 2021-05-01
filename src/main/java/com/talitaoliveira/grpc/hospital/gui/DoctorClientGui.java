@@ -125,9 +125,9 @@ public class DoctorClientGui implements ActionListener {
 
 
         // set border for the panel
-        patientPanel2.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Hospital Panel2"));
+        patientPanel2.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Doctor Panel"));
 
-        panel2.add("Hospital Panel2", patientPanel2);
+        panel2.add("Doctor Panel", patientPanel2);
 
         return panel2;
 
@@ -206,8 +206,6 @@ public class DoctorClientGui implements ActionListener {
             reply1.append(String.valueOf(registerDoctorResponse.getResult()));
 
         } else if (label.equals("Find Doctors")) {
-            System.out.println("service find doctors to be invoked ...");
-
             System.out.println("Find Doctors to be invoked ...");
             ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50052)
                     .usePlaintext()

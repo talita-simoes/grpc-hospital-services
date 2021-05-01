@@ -67,18 +67,18 @@ public class HospitalClient {
 
 
     // CALLING THE FUNCTIONS (comment out to not call)------------------------------------------
-        //doUnaryCallPatient(channel);
+        // SERVICE PATIENT
+        doUnaryCallPatient(channel);
+        doClientStreamingCallPatientAverage(channel);
 
-        //doClientStreamingCallPatientAverage(channel);
-
+        //SERVICE DOCTOR
         doServerStreamingCallDoctor(channel2);
-
         doUnaryCallRegisterDoctor(channel2);
 
+        //SERVICE BEDS
         doBidirectionalCallBeds(channel3);
 
-        //doBidirectionalCall2(channel);
-
+        doServerStreamingCallRoomsAvailable(channel3);
 
         System.out.println("Shutting down channel");
         channel.shutdown();
@@ -259,55 +259,18 @@ public class HospitalClient {
         }
     }
 
-    private void doBidirectionalCall2(ManagedChannel channel3){
+    //call the roomsAvailable
+    private void doServerStreamingCallRoomsAvailable(ManagedChannel channel3){
 
-        BedsServiceGrpc.BedsServiceStub asyncClient = BedsServiceGrpc.newStub(channel3);
+        BedsServiceGrpc.BedsServiceBlockingStub roomsClient = BedsServiceGrpc.newBlockingStub(channel3);
 
-        CountDownLatch latch = new CountDownLatch(1);
-
-        StreamObserver<BedsMessageRequest> requestObserver = asyncClient.bedsMessage(new StreamObserver<BedsMessageResponse>() {
-            @Override
-            public void onNext(BedsMessageResponse value) {
-                System.out.println("Response from server: " + value.getMessageToReturn());
-            }
-
-            @Override
-            public void onError(Throwable t) {
-            latch.countDown();
-            }
-
-            @Override
-            public void onCompleted() {
-                System.out.println("Server is done sending data");
-                latch.countDown();
-            }
-        });
-
-        Arrays.asList("John", "Anna", "Scarlet", "Adriana").forEach(
-                name -> {
-                    System.out.println("Sending: "+ name); //log that we are sending a message
-                    requestObserver.onNext(BedsMessageRequest.newBuilder()
-                            .setBedsMessage(BedsMessage.newBuilder().setMessage1(name))
-                            .build());
-
-                    //allow to show the timing of the streaming
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-        );
-        requestObserver.onCompleted();
-
-        try {
-            latch.await(3,TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-
-        }
-
+        RoomsAvailableRequest roomsAvailableRequest =
+                RoomsAvailableRequest.newBuilder()
+                        .setFloor("2")
+                        .build();
+        // stream the responses in a block manner
+        roomsClient.roomsAvailable(roomsAvailableRequest).forEachRemaining
+                (roomsAvailableResponse -> System.out.println(roomsAvailableResponse.getResult()));
     }
 
 }//end of class

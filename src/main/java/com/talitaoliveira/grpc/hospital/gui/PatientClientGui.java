@@ -160,9 +160,9 @@ public class PatientClientGui implements ActionListener, PropertyChangeListener 
 
 
         // set border for the panel
-        patientPanel2.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Hospital Panel"));
+        patientPanel2.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Patient Panel"));
 
-        panel2.add("Hospital Panel", patientPanel2);
+        panel2.add("Patient Panel", patientPanel2);
 
         return panel2;
 

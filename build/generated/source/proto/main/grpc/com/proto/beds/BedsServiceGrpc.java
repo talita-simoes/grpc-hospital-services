@@ -3,9 +3,6 @@ package com.proto.beds;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
- * <pre>
- * Bidirectional Streaming API
- * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.36.0)",
@@ -48,35 +45,35 @@ public final class BedsServiceGrpc {
     return getBedsAvailableMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.proto.beds.BedsMessageRequest,
-      com.proto.beds.BedsMessageResponse> getBedsMessageMethod;
+  private static volatile io.grpc.MethodDescriptor<com.proto.beds.RoomsAvailableRequest,
+      com.proto.beds.RoomsAvailableResponse> getRoomsAvailableMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "BedsMessage",
-      requestType = com.proto.beds.BedsMessageRequest.class,
-      responseType = com.proto.beds.BedsMessageResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-  public static io.grpc.MethodDescriptor<com.proto.beds.BedsMessageRequest,
-      com.proto.beds.BedsMessageResponse> getBedsMessageMethod() {
-    io.grpc.MethodDescriptor<com.proto.beds.BedsMessageRequest, com.proto.beds.BedsMessageResponse> getBedsMessageMethod;
-    if ((getBedsMessageMethod = BedsServiceGrpc.getBedsMessageMethod) == null) {
+      fullMethodName = SERVICE_NAME + '/' + "RoomsAvailable",
+      requestType = com.proto.beds.RoomsAvailableRequest.class,
+      responseType = com.proto.beds.RoomsAvailableResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.proto.beds.RoomsAvailableRequest,
+      com.proto.beds.RoomsAvailableResponse> getRoomsAvailableMethod() {
+    io.grpc.MethodDescriptor<com.proto.beds.RoomsAvailableRequest, com.proto.beds.RoomsAvailableResponse> getRoomsAvailableMethod;
+    if ((getRoomsAvailableMethod = BedsServiceGrpc.getRoomsAvailableMethod) == null) {
       synchronized (BedsServiceGrpc.class) {
-        if ((getBedsMessageMethod = BedsServiceGrpc.getBedsMessageMethod) == null) {
-          BedsServiceGrpc.getBedsMessageMethod = getBedsMessageMethod =
-              io.grpc.MethodDescriptor.<com.proto.beds.BedsMessageRequest, com.proto.beds.BedsMessageResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BedsMessage"))
+        if ((getRoomsAvailableMethod = BedsServiceGrpc.getRoomsAvailableMethod) == null) {
+          BedsServiceGrpc.getRoomsAvailableMethod = getRoomsAvailableMethod =
+              io.grpc.MethodDescriptor.<com.proto.beds.RoomsAvailableRequest, com.proto.beds.RoomsAvailableResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RoomsAvailable"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.proto.beds.BedsMessageRequest.getDefaultInstance()))
+                  com.proto.beds.RoomsAvailableRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.proto.beds.BedsMessageResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new BedsServiceMethodDescriptorSupplier("BedsMessage"))
+                  com.proto.beds.RoomsAvailableResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BedsServiceMethodDescriptorSupplier("RoomsAvailable"))
               .build();
         }
       }
     }
-    return getBedsMessageMethod;
+    return getRoomsAvailableMethod;
   }
 
   /**
@@ -124,13 +121,13 @@ public final class BedsServiceGrpc {
   }
 
   /**
-   * <pre>
-   * Bidirectional Streaming API
-   * </pre>
    */
   public static abstract class BedsServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * Bidirectional Streaming API
+     * </pre>
      */
     public io.grpc.stub.StreamObserver<com.proto.beds.BedsAvailableRequest> bedsAvailable(
         io.grpc.stub.StreamObserver<com.proto.beds.BedsAvailableResponse> responseObserver) {
@@ -139,12 +136,12 @@ public final class BedsServiceGrpc {
 
     /**
      * <pre>
-     * Bidirectional Streaming API
+     * Server Streaming
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<com.proto.beds.BedsMessageRequest> bedsMessage(
-        io.grpc.stub.StreamObserver<com.proto.beds.BedsMessageResponse> responseObserver) {
-      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getBedsMessageMethod(), responseObserver);
+    public void roomsAvailable(com.proto.beds.RoomsAvailableRequest request,
+        io.grpc.stub.StreamObserver<com.proto.beds.RoomsAvailableResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRoomsAvailableMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -157,20 +154,17 @@ public final class BedsServiceGrpc {
                 com.proto.beds.BedsAvailableResponse>(
                   this, METHODID_BEDS_AVAILABLE)))
           .addMethod(
-            getBedsMessageMethod(),
-            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+            getRoomsAvailableMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
-                com.proto.beds.BedsMessageRequest,
-                com.proto.beds.BedsMessageResponse>(
-                  this, METHODID_BEDS_MESSAGE)))
+                com.proto.beds.RoomsAvailableRequest,
+                com.proto.beds.RoomsAvailableResponse>(
+                  this, METHODID_ROOMS_AVAILABLE)))
           .build();
     }
   }
 
   /**
-   * <pre>
-   * Bidirectional Streaming API
-   * </pre>
    */
   public static final class BedsServiceStub extends io.grpc.stub.AbstractAsyncStub<BedsServiceStub> {
     private BedsServiceStub(
@@ -185,6 +179,9 @@ public final class BedsServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Bidirectional Streaming API
+     * </pre>
      */
     public io.grpc.stub.StreamObserver<com.proto.beds.BedsAvailableRequest> bedsAvailable(
         io.grpc.stub.StreamObserver<com.proto.beds.BedsAvailableResponse> responseObserver) {
@@ -194,20 +191,17 @@ public final class BedsServiceGrpc {
 
     /**
      * <pre>
-     * Bidirectional Streaming API
+     * Server Streaming
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<com.proto.beds.BedsMessageRequest> bedsMessage(
-        io.grpc.stub.StreamObserver<com.proto.beds.BedsMessageResponse> responseObserver) {
-      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
-          getChannel().newCall(getBedsMessageMethod(), getCallOptions()), responseObserver);
+    public void roomsAvailable(com.proto.beds.RoomsAvailableRequest request,
+        io.grpc.stub.StreamObserver<com.proto.beds.RoomsAvailableResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getRoomsAvailableMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
-   * <pre>
-   * Bidirectional Streaming API
-   * </pre>
    */
   public static final class BedsServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<BedsServiceBlockingStub> {
     private BedsServiceBlockingStub(
@@ -220,12 +214,20 @@ public final class BedsServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new BedsServiceBlockingStub(channel, callOptions);
     }
+
+    /**
+     * <pre>
+     * Server Streaming
+     * </pre>
+     */
+    public java.util.Iterator<com.proto.beds.RoomsAvailableResponse> roomsAvailable(
+        com.proto.beds.RoomsAvailableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getRoomsAvailableMethod(), getCallOptions(), request);
+    }
   }
 
   /**
-   * <pre>
-   * Bidirectional Streaming API
-   * </pre>
    */
   public static final class BedsServiceFutureStub extends io.grpc.stub.AbstractFutureStub<BedsServiceFutureStub> {
     private BedsServiceFutureStub(
@@ -240,8 +242,8 @@ public final class BedsServiceGrpc {
     }
   }
 
-  private static final int METHODID_BEDS_AVAILABLE = 0;
-  private static final int METHODID_BEDS_MESSAGE = 1;
+  private static final int METHODID_ROOMS_AVAILABLE = 0;
+  private static final int METHODID_BEDS_AVAILABLE = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -260,6 +262,10 @@ public final class BedsServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_ROOMS_AVAILABLE:
+          serviceImpl.roomsAvailable((com.proto.beds.RoomsAvailableRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.beds.RoomsAvailableResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -273,9 +279,6 @@ public final class BedsServiceGrpc {
         case METHODID_BEDS_AVAILABLE:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.bedsAvailable(
               (io.grpc.stub.StreamObserver<com.proto.beds.BedsAvailableResponse>) responseObserver);
-        case METHODID_BEDS_MESSAGE:
-          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.bedsMessage(
-              (io.grpc.stub.StreamObserver<com.proto.beds.BedsMessageResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -328,7 +331,7 @@ public final class BedsServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new BedsServiceFileDescriptorSupplier())
               .addMethod(getBedsAvailableMethod())
-              .addMethod(getBedsMessageMethod())
+              .addMethod(getRoomsAvailableMethod())
               .build();
         }
       }
